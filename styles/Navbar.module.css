@@ -1,0 +1,155 @@
+.container {
+  height: 100px;
+  padding: 0px 50px;
+  background-color: #d1411e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.item:nth-child(2) {
+  flex: 3;
+}
+
+.item:last-child {
+  justify-content: flex-end;
+}
+
+.callButton {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+
+}
+
+.texts {
+  margin-left: 10px;
+  color: white;
+
+}
+
+.text:first-child {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.text:last-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.list {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: white;
+
+}
+
+.listItem {
+  margin: 30px;
+  font-weight: 500;
+
+}
+
+.cart{
+    position: relative;
+}
+
+.counter{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #d1411e;
+
+}
+
+.linkdes {
+  display:none
+}
+
+@media screen and (max-width:480px) {
+
+  .container {
+    height: 100px;
+    background-color: #d1411e;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .item:nth-child(2) {
+    /* display: none; */
+
+  }
+
+  .item:nth-child(1) {
+    flex: 3;
+  }
+
+  .text:first-child {
+    display:none
+  }
+  .text:last-child {
+    display:none
+  }
+  .callButton {
+    display:none
+  }
+  .linkres {
+    display:none
+  }
+
+  .linkdes {
+    display: flex;
+    padding-right: 20px;
+    animation: shake 5s infinite linear;
+  }
+  .cart{
+    position: relative;
+    justify-content: flex-end;
+    padding-left: 20px;
+}
+  @keyframes shake {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-15deg); }
+    20% { transform: rotate(15deg); }
+    30% { transform: rotate(0deg); }
+    40% { transform: rotate(15deg); }
+    50% { transform: rotate(-15deg); }
+    60% { transform: rotate(0deg); }
+    70% { transform: rotate(-15deg); }
+    80% { transform: rotate(15deg); }
+    90% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+}
