@@ -1,5 +1,5 @@
 import React from 'react'
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 import classes from '../../styles/Navbar.module.css'
 import { useSelector } from "react-redux";
 import { RootState } from '@/redux/store';
