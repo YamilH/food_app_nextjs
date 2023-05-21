@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "https://lodemaxi.vercel.app/api/$1" },
+    { "source": "/products", "destination": "https://lodemaxi.vercel.app/api/products" }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers": [{ "key": "Cache-Control", "value": "s-maxage=86400" }] }
+  ],
+  "env": {
+    "API_URL": "https://lodemaxi.vercel.app/api"
+  },
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "@vercel/node"
+    }
+  }
+}
