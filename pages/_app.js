@@ -4,8 +4,8 @@ import "../styles/globals.css";
 import store from "../redux/store";
 import { Provider } from "react-redux";
 import Router from 'next/router';
-import Layout from './components/Layout';
-import Loader from './components/Loader';
+import Layout from './components/Layout.jsx';
+import Loader from './components/Loader.jsx';
 
 function MyApp({ Component, pageProps }) {
 
