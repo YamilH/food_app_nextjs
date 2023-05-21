@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import classes from "../styles/Cart.module.css";
-import Image from "next/legacy/image";
-import { useDispatch, useSelector } from "react-redux";
-import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
-import axios from "axios";
-import { useRouter } from "next/router";
-import { reset } from "../redux/cartSlice";
-import OrderDetail from "./components/OrdenDetail";
+// import Image from "next/legacy/image";
+// import { useDispatch, useSelector } from "react-redux";
+// import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+// import axios from "axios";
+// import { useRouter } from "next/router";
+// import { reset } from "../redux/cartSlice";
+// import OrderDetail from "./components/OrdenDetail";
 
 const Cart = () => {
   // const cart = useSelector((state) => state.cart);
