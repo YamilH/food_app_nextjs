@@ -21,16 +21,17 @@ const Product = ({ pizza }) => {
     const difference = pizza.prices[sizeIndex] - pizza.prices[size];
     setSize(sizeIndex);
     changePrice(difference);
-  }
+  };
 
   const handleChange = (e, option) => {
     const checked = e.target.checked;
-    if (checked) { 
+
+    if (checked) {
       changePrice(option.price);
       setExtras((prev) => [...prev, option]);
     } else {
       changePrice(-option.price);
-      setExtras(extras.filter(extra => extra._id !== option._id));
+      setExtras(extras.filter((extra) => extra._id !== option._id));
     }
   };
 
@@ -66,15 +67,15 @@ const Product = ({ pizza }) => {
         </div>
         <h3 className={classes.choose}>Agregar más ingredientes</h3>
         <div className={classes.ingredients}>
-          {pizza.extraOptions.map(option=>(
-          <div className={classes.option} key={option._id}>
-          <input
-            type="checkbox"
-            id={option.text}
-            name={option.text}
-            className={classes.checkbox}
-            onChange={(e) => handleChange(e, { ...option, price: Number(option.price) })}
-          />
+          {pizza.extraOptions.map((option) => (
+            <div className={classes.option} key={option._id}>
+              <input
+                type="checkbox"
+                id={option.text}
+                name={option.text}
+                className={classes.checkbox}
+                onChange={(e) => handleChange(e, option)}
+              />
           <label htmlFor="double">{option.text}</label>
         </div>
           ))}
@@ -82,7 +83,7 @@ const Product = ({ pizza }) => {
         </div>
         <div className={classes.add}>
             <input 
-            onChange={(e) => setQuantity(Number(e.target.value))} 
+            onChange={(e) => setQuantity(e.target.value)} 
             type="number" 
             defaultValue={1} 
             className={classes.quantity}/>
