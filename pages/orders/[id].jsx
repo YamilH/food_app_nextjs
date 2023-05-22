@@ -115,7 +115,7 @@ const Order = ({ order }) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/orders/${params.id}`);
+  const res = await axios.get(`${process.env.DEPLOY_URL}/api/orders/${params.id}`);
   return {
     props: { order: res.data },
   };

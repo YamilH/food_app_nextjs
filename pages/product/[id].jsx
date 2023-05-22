@@ -99,7 +99,7 @@ const Product = ({ pizza }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${params.id}`
+    `${process.env.DEPLOY_URL}/api/products/${params.id}`
   );
 
   return {

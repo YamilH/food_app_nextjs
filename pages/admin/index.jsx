@@ -26,7 +26,7 @@ const Index = ({ orders, products }) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/orders` + id, {
+      const res = await axios.put(`${process.env.DEPLOY_URL}/api/orders` + id, {
         status: currentStatus + 1,
       });
       setOrderList([
@@ -130,8 +130,8 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productRes = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products`);
-  const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/orders`);
+  const productRes = await axios.get(`${process.env.DEPLOY_URL}/api/products`);
+  const orderRes = await axios.get(`${process.env.DEPLOY_URL}/api/orders`);
 
   return {
     props: {
