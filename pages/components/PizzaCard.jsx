@@ -1,9 +1,16 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import Image from "next/image";
 import classes from "../../styles/PizzaCard.module.css";
 import Link from 'next/link';
 
 const PizzaCard = ({ pizza }) => {
+
+  const [ pizzaName, setPizzaName ] = useState([])
+
+  useEffect(() => {
+    setPizzaName(pizza)
+  }, [])
+
   return (
     <div className={classes.container}>
       <Link href={`/product/${pizza._id}`} passHref>

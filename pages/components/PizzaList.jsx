@@ -1,8 +1,15 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import classes from "../../styles/PizzaList.module.css";
 import PizzaCard from "./PizzaCard.jsx"
 
 const PizzaList = ({ pizzaList }) => {
+
+  const [ pizzaName, setPizzaName ] = useState([])
+
+  useEffect(() => {
+    setPizzaName(pizzaList)
+  }, [])
+
   return (
     <div className={classes.container}>
       <h1 className={classes.title} id="idmenu">Menú</h1>
