@@ -34,7 +34,7 @@ export const getServerSideProps = async (ctx) => {
     admin = true;
   }
 
-  const res = await axios.get("https://food-app-nextjs-lyp5pcv6d-yamilh.vercel.app/api/products");
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products`);
   return {
     props: {
       pizzaList: res.data,

@@ -99,7 +99,7 @@ const Product = ({ pizza }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `https://food-app-nextjs-lyp5pcv6d-yamilh.vercel.app/api/products/${params.id}`
+    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/${params.id}`
   );
 
   return {

@@ -4,12 +4,6 @@ import PizzaCard from "./PizzaCard.jsx"
 
 const PizzaList = ({ pizzaList }) => {
 
-  const [ pizzaName, setPizzaName ] = useState([])
-
-  useEffect(() => {
-    setPizzaName(pizzaList)
-  }, [])
-
   return (
     <div className={classes.container}>
       <h1 className={classes.title} id="idmenu">Menú</h1>

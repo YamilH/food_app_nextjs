@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleClick = async () => {
     try {
-      await axios.post("https://food-app-nextjs-lyp5pcv6d-yamilh.vercel.app/api/login", {
+      await axios.post(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/login`, {
         username,
         password,
       });

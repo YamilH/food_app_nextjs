@@ -5,12 +5,6 @@ import Link from 'next/link';
 
 const PizzaCard = ({ pizza }) => {
 
-  const [ pizzaName, setPizzaName ] = useState([])
-
-  useEffect(() => {
-    setPizzaName(pizza)
-  }, [])
-
   return (
     <div className={classes.container}>
       <Link href={`/product/${pizza._id}`} passHref>

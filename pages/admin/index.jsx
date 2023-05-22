@@ -13,7 +13,7 @@ const Index = ({ orders, products }) => {
     console.log(id);
     try {
       const res = await axios.delete(
-        "https://food-app-nextjs-lyp5pcv6d-yamilh.vercel.app/api/products/" + id
+        `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products` + id
       );
       setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
     } catch (err) {
@@ -26,7 +26,7 @@ const Index = ({ orders, products }) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put("https://food-app-nextjs-lyp5pcv6d-yamilh.vercel.app/api/orders/" + id, {
+      const res = await axios.put(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/orders` + id, {
         status: currentStatus + 1,
       });
       setOrderList([
@@ -130,8 +130,8 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productRes = await axios.get("https://food-app-nextjs-lyp5pcv6d-yamilh.vercel.app/api/products");
-  const orderRes = await axios.get("https://food-app-nextjs-lyp5pcv6d-yamilh.vercel.app/api/orders");
+  const productRes = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products`);
+  const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/orders`);
 
   return {
     props: {
